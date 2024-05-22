@@ -1,10 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import Sidenavbar from './components/Sidenavbar/Sidenavbar'
+import Outlet from './components/Outletnavbar/Outlet'
+import Footer from './components/Footer/Footerbar'
 function App() {
   return (
-    <div className="App">
-      <h1>Hello every one</h1>
+    <div >
+      <Sidenavbar/>
+      <Outlet/>
+      <Footer/>
+
     </div>
   );
 }
