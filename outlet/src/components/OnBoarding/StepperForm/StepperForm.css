@@ -5,16 +5,18 @@
 .sub-container {
   width:1000px;
   position: sticky;
-  left: 360px;
+  left: 340px;
   height:120px;
   border:2px solid #979797;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Adjust shadow properties as needed */
   transform: scale(1.0) ;
   border:2px solid #979797;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Adjust shadow properties as needed */
-  transform: scale(0.75) ;
-  flex-wrap: wrap;
-  overflow-x: hidden;
+  padding-left: 20px;
+  padding-right: 20px;
+ 
+ 
+
 
 
  
@@ -124,7 +126,7 @@
 /* Media Queries for responsiveness */
 @media (max-width: 2000px) {
   .stepper-progress {
-    width: 90%;  /* Adjust width for screens smaller than 2700px */
+    width: 95%;  /* Adjust width for screens smaller than 2700px */
   }
   .container {
    
