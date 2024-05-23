@@ -26,10 +26,10 @@ function StepperForm() {
   const [activeStep, setActiveStep] = useState(0);
 
   const steps = [
-    { title: 'User details', component: <UserDetails />, icon: <BiNotepad className='image' /> },
+    { title: 'Userdetails', component: <UserDetails />, icon: <BiNotepad className='image' /> },
     { title: 'Payment', component: <Payment />, icon: <CiLocationOn className='image' /> },
-    { title: 'Booking confirmation', component: <Confirmation />, icon: <PiNotepadBold className='image' /> },
-    { title: 'Sign Up', component: <Signup />, icon: <TfiNotepad className='image' /> },
+    { title: 'Booking', component: <Confirmation />, icon: <PiNotepadBold className='image' /> },
+    { title: 'SignUp', component: <Signup />, icon: <TfiNotepad className='image' /> },
   ];
   const [visitedSteps, setVisitedSteps] = useState(new Array(steps.length).fill(false));
 
@@ -66,6 +66,7 @@ function StepperForm() {
                 onClick={() => handleStepClick(index)}
               >
                 {step.icon}
+                <div className='icon-text'>{step.title}</div>
               </div>
             ))}
           </div>
