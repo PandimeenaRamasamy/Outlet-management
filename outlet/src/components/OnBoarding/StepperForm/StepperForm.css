@@ -1,71 +1,84 @@
-.container{
+.container {
   display: flex;
   justify-content: center;
+  position: relative;
+  top:206px
 }
-.sub-container{
+
+.sub-container {
   width: 1022px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Adjust shadow properties as needed */
-
 }
+
 .stepper-container {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-  }
-  .image{
-    height:24px;
-    width: 24px;
-    color: #fff;
-  }
+  display: flex;
+  transform: translateY(25px);
+  justify-content: space-between;
+  margin-bottom: 20px;
   
-  .step {
-    cursor: pointer;
-    width: 24px;
-    height:24px;
-    padding: 10px;
-    border-radius:100px;
-    background-color: grey;
-    
-  }
-  .visited{
-    background-color:rgba(0, 183, 29, 1);
-  }
+}
+
+.image {
+  position: absolute;
+  top:-2px;
+  height: 44px;
+  width: 24px;
+  color: black;
+}
+
+.step {
+  cursor: pointer;
+  width: 45px;
+  height: 44px;
+  padding: 10px;
+  border-radius: 100px;
+  background-color: #C7C8CC;
   
-  .step.active {
-    background-color: green;
-    color: #fff;
-  }
-  
-  .step-content {
-    padding: 20px;
-  }
-  
-  .step-buttons button {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .step-buttons button:hover {
-    background-color: #0056b3;
-  }
-  .stepper-progress {
-    position: absolute;
-    top:15px;
-    z-index: -1;
-    width: 1022px;
-    height: 5px;
-    background-color: #ccc;
-    border-radius: 5px;
-    margin-bottom: 20px;
-  }
-  
-  .progress-bar {
-    height: 100%;
-    background-color:rgba(0, 183, 29, 1)   ;
-    border-radius: 5px;
-  }
-  
+}
+
+.visited {
+  background-color: rgba(0, 183, 29, 1);
+  color:white;
+}
+.visited.icon {
+  color:white;
+}
+.step.active {
+  background-color: rgba(182, 210, 140, 1)
+  ;
+  color:#fff;
+}
+
+.step-content {
+  padding: 20px;
+}
+
+.step-buttons button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.step-buttons button:hover {
+  background-color: #0056b3;
+}
+
+.stepper-progress {
+  position: absolute;
+  top: 45px;
+  z-index: -1;
+  width: 1022px;
+  height: 5px;
+  background-color: #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: rgba(0, 183, 29, 1);
+  border-radius: 5px;
+}
