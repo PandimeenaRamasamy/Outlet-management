@@ -1,5 +1,6 @@
 import React ,{useState}from 'react'
 import './Outlet.css'
+import Registration from '../Registration/Registration';
 
 const Outlet = () => {
     const categories = ['Registration', 'OnBoarding', 'Outlet Details','Subscription'];
@@ -13,6 +14,7 @@ const Outlet = () => {
       
     };
   return (
+    <>
     <div className='outletnav'>
         <p>Outlet Management</p>
        
@@ -30,8 +32,15 @@ const Outlet = () => {
               
             </ul>
         </nav>
-       
+
+
+      
     </div>
+    {activeCategory === 'Registration' && <Registration/>}
+        {/* {activeCategory === 'Veg' && <Vegdispla/>}
+        {activeCategory === 'Non-Veg' && <Nonvegdidsplay/>} */}
+   
+    </>
   )
 }
 
