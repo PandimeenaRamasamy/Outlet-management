@@ -133,6 +133,6 @@ position:absolute;
 
 @media (max-width: 480px) {
   .stepper-progress {
-    width: 90%;         /* Adjust width for screens smaller than 480px */
+    width: 100%;         /* Adjust width for screens smaller than 480px */
   }
 }
