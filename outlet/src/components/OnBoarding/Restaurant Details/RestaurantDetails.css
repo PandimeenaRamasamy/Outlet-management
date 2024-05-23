@@ -7,12 +7,12 @@
   height: 100vh;
 
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: start;
+  align-items: start;
   margin: 20px;
 }
 .submain-div {
-  transform: translateX(-290px);
+  /* transform: translateX(-50px); */
 
   /* transform: translateX(20px); */
   padding-left: 30px;
