@@ -9,11 +9,11 @@
     height: 100%;
   } */
   .main-div {
-    width: 100%;
+    
    margin-left: 350px;
     display: flex;
     
-    position: relative;
+   
  
    
     
@@ -190,7 +190,24 @@
    .fornoimg
    {
     
-    margin-left: 38%;
+    margin-left: 37%;
     color:#67833E; 
     font-size: 12px;
+   }
+   
+   .imcrosssty{
+
+    position: absolute;
+    top: 10%;
+    right: 38%;
+    background-color:#F23D3D;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+
+
    }

@@ -4,6 +4,7 @@ import Footernav from '../Footer/Footerbar'
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import Outlet from '../Outletnavbar/Outlet'
+import { ImCross, ImFontSize } from "react-icons/im";
 
 import './Registration.css'
 const Registration = () => {
@@ -16,11 +17,9 @@ const Registration = () => {
  
 
  
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+ 
 
-  const toggleDropdown = () => {
-    setDropdownOpen(!dropdownOpen);
-  };
+ 
 
   const handleImage = (e) => {
     const selectedFile = e.target.files[0];
@@ -33,9 +32,24 @@ const Registration = () => {
       reader.readAsDataURL(selectedFile);
     }
   };
+  const[imageclose,setimageclose]=useState(false)
+
   const handleButtonClick = () => {
     document.getElementById('hidden-file-input').click();
+  
+    setimageclose(false)
+    
   };
+
+  const closeModal=()=>
+    {
+    
+      setimageclose(true)
+      setFile(null)
+    }
+
+
+
   return (
     <>
    
@@ -112,18 +126,23 @@ const Registration = () => {
 
                   <button type="button" className="custom-file-button custom-file-input" onClick={handleButtonClick}>Browse</button>
                   {/* <span className="custom-file-name">{file}</span> */}
-
                   <div className='preview'>
-
                     {file && 
                     <div>
+                    {
+                      imageclose ? <p style={{marginLeft:'-5%',color:'#67833E',fontSize: '12px'}}>No image selected</p>:
+                      <>
+                   <button onClick={closeModal} className='imcrosssty'><ImCross style={{ fontSize: '10px', color: 'white' }} /></button>
                       <img src={imagePreview} alt="Preview" className="imgpreview" />
-                             <p>Preview</p>
+                      <p>Preview</p></>
+                    } 
+                      
                     </div>
                     }
                    
                   </div>
-                  {!file && <p className='fornoimg'>No image selected</p> }
+                  {!file &&  <p className='fornoimg'>No image selected</p> }
+                 
                 </div>
               </div>
 
