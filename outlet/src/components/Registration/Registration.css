@@ -12,6 +12,7 @@
     
    margin-left: 350px;
     display: flex;
+   
     
    
  
@@ -21,9 +22,10 @@
   .submain-div {
     /* transform: translateY(-60px); */
     /* transform: translateX(500px); */
-    position: relative;
+  
     padding-left: 30px;
-    margin-top: 150px;
+    margin-top: 25%;
+    
   }
   .heading {
     width: 185.69px;
@@ -32,7 +34,7 @@
     font-size: 20px;
     line-height: 30px;
     color: #2f2f2f;
-    margin-top: 20px;
+   
 
   }
   .form-div {
@@ -139,9 +141,7 @@
    margin-bottom: 20px;
     align-items: center;
     justify-content: center;
-    font-family: 'Poppins', sans-serif ;
-    
-    
+    font-family: 'Poppins', sans-serif ;  
 
    }
    

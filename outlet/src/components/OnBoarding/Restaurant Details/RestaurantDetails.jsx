@@ -56,8 +56,12 @@ const RestaurantDetails = () => {
   };
 
   return (
-    <div className="main-div">
-      <div className="submain-div">
+    <>
+
+
+
+    <div className="main-div2">
+      <div className="submain-div2">
         <div className="heading">
           <h5>Restaurant Details</h5>
         </div>
@@ -238,6 +242,7 @@ const RestaurantDetails = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

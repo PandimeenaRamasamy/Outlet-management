@@ -51,6 +51,7 @@ function StepperForm() {
 
   return (
     <div className="page-content">
+      <div className='stepform'>
       <div className='container'>
         <div className='sub-container'>
           <div className="stepper-progress">
@@ -72,6 +73,9 @@ function StepperForm() {
       </div>
       <div className='component-container'>
         {steps[activeStep].component} 
+      </div>
+
+
       </div>
       <div className='btn-container'>
         <div className='btn-footer'>

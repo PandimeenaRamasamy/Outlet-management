@@ -79,18 +79,8 @@ const Fssai = () => {
       setimageclose(true)
       setFile(null)
     }
-
-
-
     const [imagePreview, setImagePreview] = useState({addphoto});
-    const [file, setFile] = useState(null);
-   
-  
-   
-   
-  
-   
-  
+    const [file, setFile] = useState(null);  
     const handleImage = (e) => {
       const selectedFile = e.target.files[0];
       if (selectedFile) {
@@ -102,20 +92,6 @@ const Fssai = () => {
         reader.readAsDataURL(selectedFile);
       }
     };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     return (
         <div className="main-div">
             <div className="submain-div">
@@ -129,7 +105,7 @@ const Fssai = () => {
                             <label htmlFor="BusinessLegalName" className="label">
                                 Do you Have a valid FSSAI Registration/License?
                             </label>
-                            <div>
+                            <div style={{marginTop:'10px'}}>
 
                                 <button
                                     onClick={() => handleButtonClick('yes')}
@@ -241,19 +217,7 @@ const Fssai = () => {
                   {!file &&    <img src={addphoto}  className='fornoimg' alt="" /> }
                  
                 </div>
-              </div>
-
-
-
-
-
-
-
-                       
-
-                        
-                           
-                        
+              </div>     
                     </form>
                 </div>
             </div>
