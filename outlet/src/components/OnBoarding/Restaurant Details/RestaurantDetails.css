@@ -8,12 +8,13 @@
 
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: center;
   margin: 20px;
 }
 .submain-div {
-  /* transform: translateY(-60px); */
-  /* transform: translateX(500px); */
+  transform: translateX(-290px);
+
+  /* transform: translateX(20px); */
   padding-left: 30px;
 
 }
