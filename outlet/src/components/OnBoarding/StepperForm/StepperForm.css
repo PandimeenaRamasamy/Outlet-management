@@ -126,27 +126,30 @@ position:absolute;
   }
   .container {
     margin-bottom: 60px;
+    margin-left: 90px;
+
  
 
   }
   .sub-container {
     
-    transform: scale(0.75) ;
+    transform: scale(0.85) ;
   
   
  
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1400px) {
   .stepper-progress {
     width: 80%;         /* Adjust width for screens smaller than 768px */
   }
   .container {
     margin-left: 400px;
+    margin-left: 90px;
     }
     .sub-container {
-      transform: scale(0.75) 
+      transform: scale(0.65) 
       
     }
   
@@ -158,6 +161,7 @@ position:absolute;
   }
   .container {
     margin-left: 900px;
+    margin-left: 70px;
     }
     .sub-container {
       transform: scale(0.75) 
