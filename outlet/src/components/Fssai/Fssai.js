@@ -93,13 +93,13 @@ const Fssai = () => {
       }
     };
     return (
-        <div className="main-div">
-            <div className="submain-div">
-                <div className="heading">
+        <div className="main-divfssai">
+            <div className="submain-divfssai">
+                <div className="headingfssai">
                     <h5>Fssai</h5>
                 </div>
 
-                <div className="form-div">
+                <div className="form-divfssai">
                     <form onSubmit={handleSubmit}>
                         <div className="labelinput-div">
                             <label htmlFor="BusinessLegalName" className="label">
