@@ -12,6 +12,8 @@
     width: 300px;
     /* border-right: 1px solid gray; */
     box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2);
+    height:190vh;
+    border-bottom-style: none;
    
     
     
@@ -22,6 +24,7 @@
     display: flex;
     flex-direction: row;
     margin-top: 30px;
+
 
 }
 .dropdown{
@@ -109,4 +112,9 @@
   }
   .pagelinksub p{
     padding: 3px;
+  }
+
+  .pg4
+  {
+    color:#67833E; 
   }
