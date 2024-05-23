@@ -66,7 +66,7 @@ const RestaurantDetails = () => {
           <h5>Restaurant Details</h5>
         </div>
 
-        <div className="form-div">
+        <div className="form-div2">
           <form onSubmit={handleSubmit}>
             <div className="labelinput-div">
               <label htmlFor="BusinessLegalName" className="label">

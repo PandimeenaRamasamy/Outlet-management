@@ -51,7 +51,7 @@ function StepperForm() {
 
   return (
     <div className="page-content">
-      <div className=''>
+      <div className='stepform'>
       <div className='container'>
         <div className='sub-container'>
           <div className="stepper-progress">

@@ -1,38 +1,15 @@
 .container {
   
   transform: translateY(200px);
-
-
-  width: 800px;
-  padding-left: 100px;
-
-
 }
-
-.stepform{
-  
-  margin-top: 0px;
-}
-
 .sub-container {
-
-  width:800px;
-
-  position: static;
-
-  width: 1111px;
-
+  width:1000px;
+  position: sticky;
+  left: 360px;
   height:120px;
-  margin-top: 0;
-  padding-left: 40px;
-
-  margin-left: 60px;
   border:2px solid #979797;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Adjust shadow properties as needed */
   transform: scale(1.0) ;
-
-
-  padding-right: 40px;
   border:2px solid #979797;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Adjust shadow properties as needed */
   transform: scale(0.75) ;
@@ -47,7 +24,7 @@
     display: flex;
     transform: translateY(25px);
     justify-content: space-between;
-    margin-bottom: 20px;
+  
     
   }
 
@@ -108,11 +85,11 @@
   color: #67833E;
   font-family: 'Poppins', sans-serif;
   border-radius: 4px;
-   border: 1px solid #67833E;
+  border: 1px solid #67833E;
   background:none;
 }
 .btn-container{
-position:absolute;
+  position:absolute;
   top:1080px;
   left:1100px
   
@@ -151,7 +128,7 @@ position:absolute;
   }
   .container {
    
-    margin-left: 120px;
+    margin-left: 50px;
     margin-bottom: 160px ;
   }
   .sub-container {
@@ -164,7 +141,7 @@ position:absolute;
   }
   .container {
    
-    margin-left: 200px;
+    margin-left: 100px;
     margin-bottom: 150px;
   }
   .sub-container {
