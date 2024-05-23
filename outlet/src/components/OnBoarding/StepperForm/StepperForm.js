@@ -6,7 +6,7 @@ import { CiLocationOn } from "react-icons/ci";
 import { TfiNotepad } from "react-icons/tfi";
 import Footerbar from '../../Footer/Footerbar';
 import RestaurantDetails from "../Restaurant Details/RestaurantDetails"
-
+import Fssai from '../../Fssai/Fssai';
 
 function Payment() {
   return <h2>Payment information</h2>;
@@ -26,7 +26,7 @@ function StepperForm() {
   const steps = [
     { title: 'Userdetails', component: <RestaurantDetails />, icon: <BiNotepad className='image' /> },
     { title: 'Payment', component: <Payment />, icon: <CiLocationOn className='image' /> },
-    { title: 'Booking', component: <Confirmation />, icon: <PiNotepadBold className='image' /> },
+    { title: 'FSSAI', component: <Fssai />, icon: <PiNotepadBold className='image' /> },
     { title: 'SignUp', component: <Signup />, icon: <TfiNotepad className='image' /> },
   ];
   const [visitedSteps, setVisitedSteps] = useState(new Array(steps.length).fill(false));
