@@ -1,6 +1,11 @@
 .container {
   
   transform: translateY(200px);
+<<<<<<< HEAD
+=======
+  width: 1000px;
+  padding-left: 150px;
+>>>>>>> 83bffe7196e8efa9b0ee2b08413bc95215f72b7d
 
 }
 
@@ -10,14 +15,29 @@
 }
 
 .sub-container {
+
   width:1100px;
+
+  position: static;
+
+  width: 1111px;
+
   height:120px;
   margin-top: 0;
   padding-left: 40px;
+
   margin-left: 100px;
   border:2px solid #979797;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Adjust shadow properties as needed */
   transform: scale(1.0) ;
+
+
+  padding-right: 40px;
+  border:2px solid #979797;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Adjust shadow properties as needed */
+  transform: scale(0.75) ;
+  flex-wrap: wrap;
+  overflow-x: hidden;
 
 
  
@@ -101,7 +121,8 @@ position:absolute;
   color:black;
 
   margin-top:30px;
-  margin-left:-12px;
+  margin-left:-5px;
+  text-align: center;
   
 }
 
@@ -109,8 +130,8 @@ position:absolute;
   position: absolute;
   top: 45px;
   z-index: -1;
-  width: 100%;            /* Default width for larger screens */
-  max-width: 1032px;     /* Maximum width */
+              /* Default width for larger screens */
+  width: 900px;     /* Maximum width */
   height: 2px;
   background-color: #ccc;
   border-radius: 5px;
@@ -124,50 +145,31 @@ position:absolute;
 }
 
 /* Media Queries for responsiveness */
-@media (max-width: 1600px) {
+@media (max-width: 2000px) {
   .stepper-progress {
-    width: 100%;         /* Adjust width for screens smaller than 1200px */
+    width: 87%;  /* Adjust width for screens smaller than 2700px */
   }
   .container {
-    margin-bottom: 60px;
-    margin-left: 90px;
-
- 
-
+   
+    margin-left: 200px;
   }
   .sub-container {
-    
-    transform: scale(0.85) ;
-  
-  
- 
+    transform: scale(1);
+  }
+}
+@media (max-width: 1500px) {
+  .stepper-progress {
+    width: 87%;  /* Adjust width for screens smaller than 2700px */
+  }
+  .container {
+   
+    margin-left: 200px;
+    margin-bottom: 50px;
+  }
+  .sub-container {
+    transform: scale(1);
   }
 }
 
-@media (max-width: 1400px) {
-  .stepper-progress {
-    width: 80%;         /* Adjust width for screens smaller than 768px */
-  }
-  .container {
-    margin-left: 400px;
-    margin-left: 90px;
-    }
-    .sub-container {
-      transform: scale(0.65) 
-      
-    }
-  
-}
 
-@media (max-width: 480px) {
-  .stepper-progress {
-    width: 100%;         /* Adjust width for screens smaller than 480px */
-  }
-  .container {
-    margin-left: 900px;
-    margin-left: 70px;
-    }
-    .sub-container {
-      transform: scale(0.75) 
-    }
-}
+
