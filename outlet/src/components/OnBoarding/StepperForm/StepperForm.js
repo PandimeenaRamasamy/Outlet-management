@@ -4,6 +4,7 @@ import { BiNotepad } from "react-icons/bi";
 import { PiNotepadBold } from "react-icons/pi";
 import { CiLocationOn } from "react-icons/ci";
 import { TfiNotepad } from "react-icons/tfi";
+import Footerbar from '../../Footer/Footerbar';
 
 function UserDetails() {
   return <h2>User details</h2>;
@@ -23,12 +24,11 @@ function Signup() {
 
 function StepperForm() {
   const [activeStep, setActiveStep] = useState(0);
-  
 
   const steps = [
     { title: 'User details', component: <UserDetails />, icon: <BiNotepad className='image' /> },
     { title: 'Payment', component: <Payment />, icon: <CiLocationOn className='image' /> },
-    { title: 'Booking confirmation', component: <Confirmation />, icon: <PiNotepadBold className='image' />  },
+    { title: 'Booking confirmation', component: <Confirmation />, icon: <PiNotepadBold className='image' /> },
     { title: 'Sign Up', component: <Signup />, icon: <TfiNotepad className='image' /> },
   ];
   const [visitedSteps, setVisitedSteps] = useState(new Array(steps.length).fill(false));
@@ -43,34 +43,47 @@ function StepperForm() {
     setActiveStep(index);
   };
 
+  const handleNextStep = () => {
+    if (activeStep < steps.length - 1) {
+      setActiveStep(activeStep + 1);
+    }
+  };
+
   const progress = ((visitedSteps.filter(step => step).length) / steps.length) * 100;
 
   return (
-    <div className='container'>
-    <div className='sub-container'>
-      <div className="stepper-progress">
-        <div className="progress-bar" style={{ width: `${progress}%` }}></div>
-      </div>
-      <div className="stepper-container">
-        {steps.map((step, index) => (
-          <div
-            key={index}
-            className={`step ${index === activeStep ? 'active' : ''} ${visitedSteps[index] ? 'visited' : ''}`}
-            onClick={() => handleStepClick(index)}
-          >
-            {step.icon}
+    <div className="page-content">
+      <div className='container'>
+        <div className='sub-container'>
+          <div className="stepper-progress">
+            <div className="progress-bar" style={{ width: `${progress}%` }}></div>
           </div>
-        ))}
-      </div>
-      <div className="step-content">
-        {steps[activeStep].component}
-        <div className="step-buttons">
-          {activeStep < steps.length - 1 && (
-            <button className="next-button" onClick={() => setActiveStep(activeStep + 1)}>Next</button>
-          )}
+          <div className="stepper-container">
+            {steps.map((step, index) => (
+              <div
+                key={index}
+                className={`step ${index === activeStep ? 'active' : ''} ${visitedSteps[index] ? 'visited' : ''}`}
+                onClick={() => handleStepClick(index)}
+              >
+                {step.icon}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+      <div className='component-container'>
+        {steps[activeStep].component} 
+      </div>
+      <div className='btn-container'>
+        <div className='btn-footer'>
+          <div>
+            <button className='clear_all'>Clear ALL</button>
+          </div>
+          <div>
+            <button className='save_next' onClick={handleNextStep}>Save And Next</button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
