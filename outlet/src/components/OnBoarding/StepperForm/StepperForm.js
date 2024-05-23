@@ -24,10 +24,10 @@ function StepperForm() {
   const [activeStep, setActiveStep] = useState(0);
 
   const steps = [
-    { title: 'Userdetails', component: <RestaurantDetails />, icon: <BiNotepad className='image' /> },
-    { title: 'Payment', component: <Payment />, icon: <CiLocationOn className='image' /> },
+    { title: 'Restaurant Details', component: <RestaurantDetails />, icon: <BiNotepad className='image' /> },
+    { title: 'Location', component: <Payment />, icon: <CiLocationOn className='image' /> },
     { title: 'FSSAI', component: <Fssai />, icon: <PiNotepadBold className='image' /> },
-    { title: 'SignUp', component: <Signup />, icon: <TfiNotepad className='image' /> },
+    { title: 'Bank Details', component: <Signup />, icon: <TfiNotepad className='image' /> },
   ];
   const [visitedSteps, setVisitedSteps] = useState(new Array(steps.length).fill(false));
 

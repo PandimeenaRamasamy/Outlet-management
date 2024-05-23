@@ -147,11 +147,12 @@ position:absolute;
 /* Media Queries for responsiveness */
 @media (max-width: 2000px) {
   .stepper-progress {
-    width: 87%;  /* Adjust width for screens smaller than 2700px */
+    width: 90%;  /* Adjust width for screens smaller than 2700px */
   }
   .container {
    
-    margin-left: 200px;
+    margin-left: 120px;
+    margin-bottom: 160px ;
   }
   .sub-container {
     transform: scale(1);
@@ -164,7 +165,7 @@ position:absolute;
   .container {
    
     margin-left: 200px;
-    margin-bottom: 50px;
+    margin-bottom: 150px;
   }
   .sub-container {
     transform: scale(1);
