@@ -13,6 +13,9 @@ import printing from '../Sidenavbar/images/printing.png'
 import statistics from '../Sidenavbar/images/statistics.png'
 import userimg from '../Sidenavbar/images/userimg.png'
 import React, { useState } from 'react';
+
+import Registration from '../Registration/Registration'
+
 const Sidenavbar = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
 
@@ -20,7 +23,8 @@ const Sidenavbar = () => {
         setDropdownOpen(!dropdownOpen);
     };
     return (
-        <div className='sidenav'>
+        <>
+         <div className='sidenav'>
             <div className='resnamelocation'>
                 <img src={Thalapa} alt="" />
                 <div>
@@ -92,6 +96,8 @@ const Sidenavbar = () => {
 
             </div>
         </div>
+       </>
+       
     )
 }
 

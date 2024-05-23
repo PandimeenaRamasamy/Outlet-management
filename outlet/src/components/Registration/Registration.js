@@ -9,27 +9,13 @@ import './Registration.css'
 const Registration = () => {
   const [restaurantNumber, setRestaurantNumber] = useState("");
   const [restaurantNumber2, setRestaurantNumber2] = useState("");
-
-  const [whatsappNumber, setWhatsappNumber] = useState("");
   console.log(restaurantNumber2);
-  const [isChecked, setIsChecked] = useState(false);
+ 
   const [imagePreview, setImagePreview] = useState(null);
   const [file, setFile] = useState(null);
-  const handleCheckboxChange = () => {
-    setIsChecked(!isChecked);
-    if (!isChecked) {
-      // If the checkbox is checked, copy the phone number from the restaurant number field to the WhatsApp number field
-      setWhatsappNumber(restaurantNumber);
-    } else {
-      // If the checkbox is unchecked, clear the WhatsApp number field
-      return <></>;
-    }
-  };
+ 
 
-  const handleWhatsappNumberChange = (value) => {
-    setWhatsappNumber(value);
-  };
-
+ 
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -51,9 +37,10 @@ const Registration = () => {
     document.getElementById('hidden-file-input').click();
   };
   return (
-    <div className='registarion'>
-      <Sidenavbar />
-      <Outlet />
+    <>
+   
+
+
       <div className="main-div">
         <div className="submain-div">
           <div className="heading">
@@ -147,8 +134,9 @@ const Registration = () => {
           </div>
         </div>
       </div>
-      <Footernav />
-    </div>
+      <Footernav /></>
+      
+   
   )
 }
 

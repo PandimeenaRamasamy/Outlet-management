@@ -12,11 +12,9 @@
     width: 300px;
     /* border-right: 1px solid gray; */
     box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2);
-    height:190vh;
-    border-bottom-style: none;
-   
+    height: 1200px;
     
-    
+    border-bottom-style: none;   
 }
 .resnamelocation
 {

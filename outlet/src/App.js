@@ -12,7 +12,9 @@ function App() {
       <Outlet/>
       <Footer/>
       <Home/> */}
-      <Registration/>
+       <Sidenavbar />
+       <Outlet />
+      
 
 
 

@@ -2,48 +2,58 @@ import React, { useState } from "react";
 import "../Restaurant Details/RestaurantDetails.css";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+import validator from "validator";
 
 const RestaurantDetails = () => {
-    const[form,setForm]=useState({
-        BusinessLegalName:"",
-        phoneType:"",
-         email:"",
-        website:"",
-        InstagramLink:"",
-        FacebookLink:""
+  const [form, setForm] = useState({
+    BusinessLegalName: "",
+    phoneType: "",
+    email: "",
+    website: "",
+    InstagramLink: "",
+    FacebookLink: "",
+  });
 
+  const [emailError, setEmailError] = useState("");
 
+  const validateEmail = (email) => {
+    if (!email) {
+      return "Email is required";
+    } else if (!validator.isEmail(email)) {
+      return "Invalid email address";
+    } else {
+      return "";
+    }
+  };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const emailValidationError = validateEmail(form.email);
+    if (emailValidationError) {
+      setEmailError(emailValidationError);
+    } else {
+      setEmailError("");
+      alert(JSON.stringify(form, null, 2));
+    }
+  };
 
-
-
-
-    })
-
-    console.log(form)
   const [restaurantNumber, setRestaurantNumber] = useState("");
   const [restaurantNumber2, setRestaurantNumber2] = useState("");
-
   const [whatsappNumber, setWhatsappNumber] = useState("");
-  console.log(restaurantNumber2);
   const [isChecked, setIsChecked] = useState(false);
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
     if (!isChecked) {
-      // If the checkbox is checked, copy the phone number from the restaurant number field to the WhatsApp number field
       setWhatsappNumber(restaurantNumber);
     } else {
-      // If the checkbox is unchecked, clear the WhatsApp number field
-      return <></>;
+      setWhatsappNumber("");
     }
   };
 
   const handleWhatsappNumberChange = (value) => {
     setWhatsappNumber(value);
   };
-  
- 
 
   return (
     <div className="main-div">
@@ -53,16 +63,24 @@ const RestaurantDetails = () => {
         </div>
 
         <div className="form-div">
-          <form action="">
+          <form onSubmit={handleSubmit}>
             <div className="labelinput-div">
-              <label htmlFor="" className="label">
+              <label htmlFor="BusinessLegalName" className="label">
                 Business Legal Name
               </label>
-              <input type="text" className="inputbox" placeholder="Name" onChange={(e)=>{setForm({...form,"BusinessLegalName":e.target.value})}} />
+              <input
+                type="text"
+                className="inputbox"
+                placeholder="Name"
+                value={form.BusinessLegalName}
+                onChange={(e) =>
+                  setForm({ ...form, BusinessLegalName: e.target.value })
+                }
+              />
             </div>
 
             <div className="labelinput-div">
-              <label htmlFor="" className="label">
+              <label htmlFor="phoneType" className="label">
                 Restaurant contact number
               </label>
               <div>
@@ -73,7 +91,9 @@ const RestaurantDetails = () => {
                     name="phoneType"
                     className="radio"
                     checked={form.phoneType === "Mobile"}
-                    onChange={(e)=>setForm({...form,"phoneType":e.target.value})}
+                    onChange={(e) =>
+                      setForm({ ...form, phoneType: e.target.value })
+                    }
                   />
                   Mobile
                 </label>
@@ -84,8 +104,9 @@ const RestaurantDetails = () => {
                     name="phoneType"
                     className="radio"
                     checked={form.phoneType === "Landline"}
-                    onChange={(e)=>setForm({...form,"phoneType":e.target.value})}
-
+                    onChange={(e) =>
+                      setForm({ ...form, phoneType: e.target.value })
+                    }
                   />
                   Landline
                 </label>
@@ -93,10 +114,9 @@ const RestaurantDetails = () => {
               <div style={{ marginTop: "20px" }}>
                 <PhoneInput
                   inputStyle={{ color: "green" }}
-                  country={restaurantNumber}
-                  onChange={(value) => {
-                    setRestaurantNumber(value);
-                  }}
+                  country={"us"}
+                  value={restaurantNumber}
+                  onChange={(value) => setRestaurantNumber(value)}
                   placeholder="75744 3444"
                   countryCodeEditable={false}
                   onlyCountries={["in", "us"]}
@@ -106,7 +126,7 @@ const RestaurantDetails = () => {
 
             <div className="labelinput-div">
               <label
-                htmlFor=""
+                htmlFor="whatsappNumber"
                 className="label"
                 style={{ marginBottom: "15px" }}
               >
@@ -115,8 +135,6 @@ const RestaurantDetails = () => {
               <label className="radio-label">
                 <input
                   type="checkbox"
-                  value="option1"
-                  name="phoneType"
                   className="radio"
                   checked={isChecked}
                   onChange={handleCheckboxChange}
@@ -134,41 +152,86 @@ const RestaurantDetails = () => {
               ) : (
                 <PhoneInput
                   inputStyle={{ color: "green" }}
-                  country={restaurantNumber2}
-                  onChange={(value) => {
-                    setRestaurantNumber2(value);
-                  }}
+                  country={"us"}
+                  value={restaurantNumber2}
+                  onChange={(value) => setRestaurantNumber2(value)}
                   placeholder="75744 3444"
                   countryCodeEditable={false}
                   onlyCountries={["in", "us"]}
                 />
               )}
             </div>
-            <div style={{ display: "flex", justifyContent: "space-evenly" }} className="personal-details">
+
+            <div
+              style={{ display: "flex", justifyContent: "space-evenly" }}
+              className="personal-details"
+            >
               <div style={{ display: "flex", flexDirection: "column" }}>
-                <label htmlFor="" className="label">
+                <label htmlFor="email" className="label">
                   Email
                 </label>
-                <input type="email" className="inputbox2" placeholder="xyz@gmail.com" onChange={(e)=>{setForm({...form,"email":e.target.value})}}  />
+                <input
+                  type="email"
+                  className={`inputbox2 ${emailError ? "inputbox-error" : ""}`}
+                  placeholder="xyz@gmail.com"
+                  value={form.email}
+                  onChange={(e) => {
+                    setForm({ ...form, email: e.target.value });
+                    setEmailError(validateEmail(e.target.value)); 
+                  }}
+                />
+                {emailError && <div style={{ color: "red" }}>{emailError}</div>}
               </div>
-              <div style={{ display: "flex", flexDirection: "column" }}  className="personal-details">
-                <label htmlFor="" className="label">
+              <div
+                style={{ display: "flex", flexDirection: "column" }}
+                className="personal-details"
+              >
+                <label htmlFor="website" className="label">
                   Website Link
                 </label>
-                <input type="url" className="inputbox2" placeholder="Magilhub.com"  onChange={(e)=>{setForm({...form,"website":e.target.value})}}/>
+                <input
+                  type="url"
+                  className="inputbox2"
+                  placeholder="Magilhub.com"
+                  value={form.website}
+                  onChange={(e) =>
+                    setForm({ ...form, website: e.target.value })
+                  }
+                />
               </div>
             </div>
-            <div style={{ display: "flex", justifyContent: "space-evenly" }}  className="personal-details">
+
+            <div
+              style={{ display: "flex", justifyContent: "space-evenly" }}
+              className="personal-details"
+            >
               <div style={{ display: "flex", flexDirection: "column" }}>
-                <label htmlFor="" className="label">
-                Instagram Link
+                <label htmlFor="InstagramLink" className="label">
+                  Instagram Link
                 </label>
-                <input type="url" className="inputbox2 " placeholder="Chandra.uiux" onChange={(e)=>{setForm({...form,"  InstagramLink":e.target.value})}} />
+                <input
+                  type="url"
+                  className="inputbox2"
+                  placeholder="Chandra.uiux"
+                  value={form.InstagramLink}
+                  onChange={(e) =>
+                    setForm({ ...form, InstagramLink: e.target.value })
+                  }
+                />
               </div>
               <div style={{ display: "flex", flexDirection: "column" }}>
-                <label htmlFor="" className="label">
-                Facebook Link                </label>
-                <input type="url" className="inputbox2" placeholder="chandra.com"  onChange={(e)=>{setForm({...form,"FacebookLink":e.target.value})}}  />
+                <label htmlFor="FacebookLink" className="label">
+                  Facebook Link
+                </label>
+                <input
+                  type="url"
+                  className="inputbox2"
+                  placeholder="chandra.com"
+                  value={form.FacebookLink}
+                  onChange={(e) =>
+                    setForm({ ...form, FacebookLink: e.target.value })
+                  }
+                />
               </div>
             </div>
           </form>
