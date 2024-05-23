@@ -12,12 +12,8 @@
     width: 100%;
    margin-left: 350px;
     display: flex;
-    
-    position: relative;
- 
-   
-    
-  }
+    height: auto;
+   }
   .submain-div {
     /* transform: translateY(-60px); */
     /* transform: translateX(500px); */

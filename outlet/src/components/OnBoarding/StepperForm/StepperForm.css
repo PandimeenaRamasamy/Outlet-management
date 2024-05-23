@@ -2,11 +2,15 @@
   display: flex;
   justify-content: center;
   position: relative;
-  top:206px
+  top:206px;
+  left: 50px;
 }
 
 .sub-container {
-  width: 1022px;
+  width: 1122px;
+  height:100px;
+  padding-left: 40px;
+  border:2px solid #979797;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Adjust shadow properties as needed */
 }
 
@@ -44,11 +48,11 @@
 }
 
 .visited {
-  background-color: rgba(0, 183, 29, 1);
+  background-color: rgba(0, 183, 29, 1) ;
   color:white;
 }
 .visited.icon {
-  color:white;
+  color:white !important;
 }
 .step.active {
   background-color: rgba(182, 210, 140, 1)
@@ -57,30 +61,34 @@
 }
 
 .btn-footer{
+  position: fixed;
   display: flex;
   justify-content:space-between;
-  width:286px
+  width:216px
 }
 .save_next{
-  width:135px;
-  height:44px;
-  background-color: rgba(103, 131, 62, 1);
-  color:white;
+  width: 100px;
+  height: 35px;
+ margin-left: 10px;
+ color: white;
+  font-family: 'Poppins', sans-serif;
   border-radius: 4px;
-  border-color: rgba(103, 131, 62, 1);
+  background-color:  #67833E;
+  border: 1px solid #67833E
 }
 .clear_all{
-  width:135px;
-  height:44px;
-  color: rgba(103, 131, 62, 1);
-  background-color:white;
+  width: 100px;
+  height: 35px;
+  color: #67833E;
+  font-family: 'Poppins', sans-serif;
   border-radius: 4px;
-  border-color: white
+   border: 1px solid #67833E;
+  background:none;
 }
 .btn-container{
 position:absolute;
-  top:815px;
-  left:1417px
+  top:835px;
+  left:1477px
   
 }
 
@@ -89,8 +97,8 @@ position:absolute;
   position: absolute;
   top: 45px;
   z-index: -1;
-  width: 1022px;
-  height: 5px;
+  width: 1032px;
+  height:2px ;
   background-color: #ccc;
   border-radius: 5px;
   margin-bottom: 20px;
@@ -98,6 +106,7 @@ position:absolute;
 
 .progress-bar {
   height: 100%;
-  background-color: rgba(0, 183, 29, 1);
+  background-color:rgba(0, 183, 29, 1)
+  ;
   border-radius: 5px;
 }
