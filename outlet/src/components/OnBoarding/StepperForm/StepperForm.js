@@ -80,7 +80,7 @@ function StepperForm() {
             <button className='clear_all'>Clear ALL</button>
           </div>
           <div>
-            <button className='save_next' onClick={handleNextStep}>Save And Next</button>
+            <button className='save_next' onClick={handleNextStep}>Save & Next</button>
           </div>
         </div>
       </div>
