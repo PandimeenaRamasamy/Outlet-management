@@ -9,10 +9,9 @@
   }
   .main-div {
     width: 100%;
-   
+   margin-left: 350px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    
     position: relative;
  
    

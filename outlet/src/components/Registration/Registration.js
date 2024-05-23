@@ -153,3 +153,9 @@ const Registration = () => {
 }
 
 export default Registration
+
+
+// <<<<<<< HEAD
+// =======
+  
+// >>>>>>> abcd494af9af931837926032ae68c569100470ca
