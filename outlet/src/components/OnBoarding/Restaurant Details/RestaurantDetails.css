@@ -107,6 +107,9 @@
     margin: 4px;
     
 }
+.inputbox-error {
+  border: 1px solid red;
+}
 
 @media only screen and (max-width: 768px) {
     .form-div {
