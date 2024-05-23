@@ -8,7 +8,7 @@
     flex-direction: column;
     height: 100%;
   } */
-  .main-div {
+  .main-divreg {
     
    margin-left: 350px;
     display: flex;
@@ -19,7 +19,7 @@
    
     
   }
-  .submain-div {
+  .submain-divreg {
     /* transform: translateY(-60px); */
     /* transform: translateX(500px); */
   
@@ -27,7 +27,7 @@
     margin-top: 25%;
     
   }
-  .heading {
+  .headingreg {
     width: 185.69px;
     height: 15.86px;
     font-family: Poppins;
@@ -37,7 +37,7 @@
    
 
   }
-  .form-div {
+  .form-divreg {
     width: 600px;
     height: 544px;
     /* border: 2px solid red; */
@@ -45,13 +45,13 @@
    
    
   }
-  .labelinput-div{
+  .labelinput-divreg{
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
      
   }
-  .label {
+  .labelreg {
     font-size: 16px;
     font-family: Poppins;
     font-weight: 400;
@@ -107,7 +107,7 @@
   }
    
   @media only screen and (max-width: 768px) {
-      .form-div {
+      .form-divreg {
         width: 90%;
       }
    

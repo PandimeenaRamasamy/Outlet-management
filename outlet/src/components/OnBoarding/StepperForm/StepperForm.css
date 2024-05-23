@@ -3,20 +3,20 @@
   transform: translateY(200px);
 
 
-  width: 1000px;
-  padding-left: 150px;
+  width: 800px;
+  padding-left: 100px;
 
 
 }
 
 .stepform{
-  margin-left: 10px;
+  
   margin-top: 0px;
 }
 
 .sub-container {
 
-  width:1100px;
+  width:800px;
 
   position: static;
 
@@ -26,7 +26,7 @@
   margin-top: 0;
   padding-left: 40px;
 
-  margin-left: 100px;
+  margin-left: 60px;
   border:2px solid #979797;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Adjust shadow properties as needed */
   transform: scale(1.0) ;

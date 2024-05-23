@@ -55,29 +55,29 @@ const Registration = () => {
    
 
 
-      <div className="main-div">
-        <div className="submain-div">
-          <div className="heading">
+      <div className="main-divreg">
+        <div className="submain-divreg">
+          <div className="headingreg">
             <h5>Registration</h5>
           </div>
 
-          <div className="form-div">
+          <div className="form-divreg">
             <form action="">
-              <div className="labelinput-div">
-                <label htmlFor="" className="label">
+              <div className="labelinput-divreg">
+                <label htmlFor="" className="labelreg">
                   Restaurant name
                 </label>
                 <input type="text" className="inputbox" placeholder="Name" />
               </div>
-              <div className="labelinput-div">
-                <label htmlFor="" className="label">
+              <div className="labelinput-divreg">
+                <label htmlFor="" className="labelreg">
                   Contact person name
                 </label>
                 <input type="text" className="inputbox" placeholder="Name" />
               </div>
 
-              <div className="labelinput-div">
-                <label htmlFor="" className="label">
+              <div className="labelinput-divreg">
+                <label htmlFor="" className="labelreg">
                   contact person number
                 </label>
 
@@ -94,15 +94,15 @@ const Registration = () => {
                   />
                 </div>
               </div>
-              <div className="labelinput-div">
-                <label htmlFor="" className="label">
+              <div className="labelinput-divreg">
+                <label htmlFor="" className="labelreg">
                   Contact Person Email ID
                 </label>
                 <input type="email" className="inputbox" placeholder="xyz@gmail.com" />
               </div>
 
-              <div className="labelinput-div">
-                <label for="cars" className="label">Designation</label>
+              <div className="labelinput-divreg">
+                <label for="cars" className="labelreg">Designation</label>
                 <select name="desig" id="desig" className="inputbox">
                   <option value="Owner">Owner</option>
                   <option value="Manager">Manager</option>
@@ -110,14 +110,14 @@ const Registration = () => {
 
                 </select>
               </div>
-              <div className="labelinput-div">
-                <label htmlFor="" className="label">
+              <div className="labelinput-divreg">
+                <label htmlFor="" className="labelreg">
                   GST NUMBER
                 </label>
                 <input type="text" className="inputbox" placeholder="" />
               </div>
-              <div className="labelinput-div ">
-                <label htmlFor="" className="label">
+              <div className="labelinput-divreg ">
+                <label htmlFor="" className="labelreg">
                   Restaurant logo
                 </label>
                 <div className="logo">
