@@ -5,10 +5,8 @@ import { PiNotepadBold } from "react-icons/pi";
 import { CiLocationOn } from "react-icons/ci";
 import { TfiNotepad } from "react-icons/tfi";
 import Footerbar from '../../Footer/Footerbar';
+import RestaurantDetails from "../Restaurant Details/RestaurantDetails"
 
-function UserDetails() {
-  return <h2>User details</h2>;
-}
 
 function Payment() {
   return <h2>Payment information</h2>;
@@ -26,7 +24,7 @@ function StepperForm() {
   const [activeStep, setActiveStep] = useState(0);
 
   const steps = [
-    { title: 'Userdetails', component: <UserDetails />, icon: <BiNotepad className='image' /> },
+    { title: 'Userdetails', component: <RestaurantDetails />, icon: <BiNotepad className='image' /> },
     { title: 'Payment', component: <Payment />, icon: <CiLocationOn className='image' /> },
     { title: 'Booking', component: <Confirmation />, icon: <PiNotepadBold className='image' /> },
     { title: 'SignUp', component: <Signup />, icon: <TfiNotepad className='image' /> },
