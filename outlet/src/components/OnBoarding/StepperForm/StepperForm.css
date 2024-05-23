@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   transform: translateY(200px);
-  margin-left: 400px;
+  margin-left: 150px;
   position: static;
 }
 
@@ -41,11 +41,9 @@
   
 }
 .component-container{
-  position:absolute;
-  top:400px;
-  left:400px;
-  width:200px;
-  border:2px solid red;
+  
+  width:500px;
+  margin: 0;
 }
 
 .visited {
@@ -88,7 +86,7 @@
 }
 .btn-container{
 position:absolute;
-  top:835px;
+  top:800px;
   left:1477px
   
 }
