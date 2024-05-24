@@ -63,8 +63,8 @@ const RestaurantDetails = () => {
 
     <div className="main-div2">
       <div className="submain-div2">
-        <div className="heading">
-          <h5>Restaurant Details</h5>
+        <div className="heading-div2">
+          <h5 >Restaurant Details</h5>
         </div>
 
         <div className="form-div2">

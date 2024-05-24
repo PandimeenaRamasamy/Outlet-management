@@ -19,7 +19,10 @@
    left: 30px;
 
 }
-.heading {
+.heading-div2 {
+  position: absolute;
+  top: -20px;
+  left: 2px;
   width: 185.69px;
   height: 15.86px;
   font-family: Poppins;
@@ -27,6 +30,7 @@
   line-height: 30px;
   color: #2f2f2f;
   margin: 2px;
+  
 }
 .form-div2 {
   width: 600px;
