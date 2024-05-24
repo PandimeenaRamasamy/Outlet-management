@@ -109,8 +109,7 @@
   position: absolute;
   top: 45px;
   z-index: -1;
-              /* Default width for larger screens */
-  width: 900px;     /* Maximum width */
+  width:1123px;     /* Maximum width */
   height: 2px;
   background-color: #ccc;
   border-radius: 5px;
@@ -126,7 +125,7 @@
 /* Media Queries for responsiveness */
 @media (max-width: 2000px) {
   .stepper-progress {
-    width: 700px  /* Adjust width for screens smaller than 2700px */
+    width: 950px  /* Adjust width for screens smaller than 2700px */
   }
   .container {
    
@@ -139,7 +138,7 @@
 }
 @media (max-width: 1500px) {
   .stepper-progress {
-    width:700px;  /* Adjust width for screens smaller than 2700px */
+    width:900px;  /* Adjust width for screens smaller than 2700px */
   }
   .container {
    
