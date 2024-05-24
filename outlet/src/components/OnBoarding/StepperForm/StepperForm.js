@@ -7,6 +7,7 @@ import { TfiNotepad } from "react-icons/tfi";
 import Footerbar from '../../Footer/Footerbar';
 import RestaurantDetails from "../Restaurant Details/RestaurantDetails"
 import Fssai from '../../Fssai/Fssai';
+import BankDetails from '../BankDetails/BankDetails';
 
 function Payment() {
   return <h2>Payment information</h2>;
@@ -16,9 +17,7 @@ function Confirmation() {
   return <h2>Booking is confirmed</h2>;
 }
 
-function Signup() {
-  return <h2>Signup</h2>;
-}
+
 
 function StepperForm() {
   const [activeStep, setActiveStep] = useState(0);
@@ -27,7 +26,7 @@ function StepperForm() {
     { title: 'Restaurant Details', component: <RestaurantDetails />, icon: <BiNotepad className='image' /> },
     { title: 'Location', component: <Payment />, icon: <CiLocationOn className='image' /> },
     { title: 'FSSAI', component: <Fssai />, icon: <PiNotepadBold className='image' /> },
-    { title: 'Bank Details', component: <Signup />, icon: <TfiNotepad className='image' /> },
+    { title: 'Bank Details', component: <BankDetails />, icon: <TfiNotepad className='image' /> },
   ];
   const [visitedSteps, setVisitedSteps] = useState(new Array(steps.length).fill(false));
 
