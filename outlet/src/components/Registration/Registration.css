@@ -22,6 +22,9 @@
     margin-top: 15%;
     
   }
+  .inputbox-error {
+    border: 1px solid red;
+  }
   .headingreg {
     width: 185.69px;
     height: 15.86px;

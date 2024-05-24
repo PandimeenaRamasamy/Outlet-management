@@ -41,6 +41,7 @@ const RestaurantDetails = () => {
   const [restaurantNumber2, setRestaurantNumber2] = useState("");
   const [whatsappNumber, setWhatsappNumber] = useState("");
   const [isChecked, setIsChecked] = useState(false);
+  
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);

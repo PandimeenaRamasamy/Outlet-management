@@ -111,8 +111,7 @@ const Fssai = () => {
                                     onClick={() => handleButtonClick('yes')}
                                     style={{
                                         backgroundColor: selectedButton === 'yes' ? '#0D79DC' : '#979797',
-                                        color: selectedButton === 'yes' ? 'white' : '#979797',
-
+                                        color: selectedButton === 'yes' ? 'white' : 'white',
                                         margin: '10px',
                                         border: 'none',
                                         borderRadius: '20px',
@@ -120,8 +119,6 @@ const Fssai = () => {
                                         cursor: 'pointer',
                                         width: '80px',
                                         height: '30px',
-
-
                                     }}
                                 >
                                     Yes
@@ -129,9 +126,8 @@ const Fssai = () => {
                                 <button
                                     onClick={() => handleButtonClick('no')}
                                     style={{
-                                        backgroundColor: selectedButton === 'no' ? '0D79DC' : '#979797',
+                                        backgroundColor: selectedButton === 'no' ? '#0D79DC' : '#979797',
                                         color: selectedButton === 'no' ? 'white' : 'white',
-
                                         margin: '10px',
                                         border: 'none',
                                         borderRadius: '20px',
@@ -146,12 +142,10 @@ const Fssai = () => {
                             </div>
 
                         </div>
-
                         <div className="labelinput-div">
                             <div
                                 style={{ display: "flex", justifyContent: "space-evenly" }}
-                                className="personal-details"
-                            >
+                                className="personal-details">                            
                                 <div style={{ display: "flex", flexDirection: "column" }}>
                                     <label htmlFor="email" className="label">
                                         FSSAI Expiration Date
@@ -164,14 +158,12 @@ const Fssai = () => {
                                         onChange={(e) => {
                                             setForm({ ...form, email: e.target.value });
                                             setEmailError(validateEmail(e.target.value));
-                                        }}
-                                    />
+                                        }}/>
                                     {emailError && <div style={{ color: "red" }}>{emailError}</div>}
                                 </div>
                                 <div
                                     style={{ display: "flex", flexDirection: "column" }}
-                                    className="personal-details"
-                                >
+                                    className="personal-details">
                                     <label htmlFor="website" className="label">
                                         FSSAI Register Number
                                     </label>
@@ -182,13 +174,10 @@ const Fssai = () => {
                                         value={form.website}
                                         onChange={(e) =>
                                             setForm({ ...form, website: e.target.value })
-                                        }
-                                    />
+                                        }/>                                    
                                 </div>
                             </div>
-
                         </div>
-
                         <div className="labelinput-div ">
                 <label htmlFor="" className="label">
                   Restaurant logo
@@ -208,17 +197,13 @@ const Fssai = () => {
                    <button onClick={closeModal} className='imcrosssty'><ImCross style={{ fontSize: '10px', color: 'white' }} /></button>
                       <img src={imagePreview} alt="Preview" className="imgpreview" />
                       <p>Preview</p></>
-                    } 
-                      
+                    }                       
                     </div>
-                    }
-                   
+                    }                  
                   </div>
-                  {!file &&    <img src={addphoto}  className='fornoimg' alt="" /> }
-                 
+                  {!file &&    <img src={addphoto}  className='fornoimg' alt="" /> }                 
                 </div>
-              </div>     
-                    </form>
+              </div>        </form>
                 </div>
             </div>
         </div>
