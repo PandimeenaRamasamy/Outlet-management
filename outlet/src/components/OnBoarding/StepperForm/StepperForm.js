@@ -8,14 +8,9 @@ import Footerbar from '../../Footer/Footerbar';
 import RestaurantDetails from "../Restaurant Details/RestaurantDetails"
 import Fssai from '../../Fssai/Fssai';
 import BankDetails from '../BankDetails/BankDetails';
+import Location from '../Location/Location'
 
-function Payment() {
-  return <h2>Payment information</h2>;
-}
 
-function Confirmation() {
-  return <h2>Booking is confirmed</h2>;
-}
 
 
 
@@ -24,7 +19,7 @@ function StepperForm() {
 
   const steps = [
     { title: 'Restaurant Details', component: <RestaurantDetails />, icon: <BiNotepad className='image' /> },
-    { title: 'Location', component: <Payment />, icon: <CiLocationOn className='image' /> },
+    { title: 'Location', component: <Location />, icon: <CiLocationOn className='image' /> },
     { title: 'FSSAI', component: <Fssai />, icon: <PiNotepadBold className='image' /> },
     { title: 'Bank Details', component: <BankDetails />, icon: <TfiNotepad className='image' /> },
   ];
