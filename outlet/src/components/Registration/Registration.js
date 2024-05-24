@@ -23,6 +23,7 @@ const Registration = () => {
 
 
   const [emailError, setEmailError] = useState("");
+  const [nameError, setNameError] = useState("");
 
   const validateEmail = (email) => {
     if (!email) {
@@ -34,20 +35,35 @@ const Registration = () => {
     }
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const emailValidationError = validateEmail(Registrationform.email);
-    if (emailValidationError) {
-      setEmailError(emailValidationError);
+  const validateName = (name) => {
+    if (!name) {
+      return "Name is required";
+    } else if (!validator.isAlpha(name)) {
+      return "Invalid name";
     } else {
-      setEmailError("");
-      alert(JSON.stringify(Registrationform, null, 2));
+      return "";
     }
   };
 
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const emailValidationError = validateEmail(Registrationform.email);
+    const nameValidationError=validateName(Registration.restaurantName)
+    if (emailValidationError) {
+      setEmailError(emailValidationError);
+      setNameError(nameValidationError)
+    } else {
+      setEmailError("");
+      setNameError("");
+      alert(JSON.stringify(Registrationform, null, 2));
+    }
+  };
 
+ console.log(nameError);
+  
 
+  console.log()
 
 
  
@@ -117,12 +133,15 @@ const Registration = () => {
                 <label htmlFor="" className="labelreg">
                   Contact person name
                 </label>
-                <input type="text" className="inputbox" placeholder="Name" 
+                <input type="text" className={`inputbox ${nameError ? "inputbox-error" : ""}`} placeholder="Name" 
                 value={Registrationform.personName}
-                onChange={(e) =>
+                onChange={(e) =>{
                   setRegistrationform({ ...Registrationform, personName: e.target.value })
+                  setNameError(validateName(e.target.value)); }
+               
                 }
                 />
+                {nameError && <div style={{ color: "red" }}>{nameError}</div>}
               </div>
 
               <div className="labelinput-divreg">
