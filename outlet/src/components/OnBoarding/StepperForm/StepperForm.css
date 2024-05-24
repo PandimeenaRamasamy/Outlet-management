@@ -126,11 +126,11 @@
 /* Media Queries for responsiveness */
 @media (max-width: 2000px) {
   .stepper-progress {
-    width: 95%;  /* Adjust width for screens smaller than 2700px */
+    width: 700px  /* Adjust width for screens smaller than 2700px */
   }
   .container {
    
-    margin-left: 50px;
+    margin-left: 360px;
     margin-bottom: 160px ;
   }
   .sub-container {
@@ -139,11 +139,11 @@
 }
 @media (max-width: 1500px) {
   .stepper-progress {
-    width: 87%;  /* Adjust width for screens smaller than 2700px */
+    width:700px;  /* Adjust width for screens smaller than 2700px */
   }
   .container {
    
-    margin-left: 100px;
+    margin-left: 360px;
     margin-bottom: 150px;
   }
   .sub-container {

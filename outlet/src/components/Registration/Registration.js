@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import Sidenavbar from '../Sidenavbar/Sidenavbar'
+
 import Footernav from '../Footer/Footerbar'
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import Outlet from '../Outletnavbar/Outlet'
+import validator from "validator";
 import { ImCross, ImFontSize } from "react-icons/im";
 
 import './Registration.css'
@@ -11,6 +11,45 @@ const Registration = () => {
   const [restaurantNumber, setRestaurantNumber] = useState("");
   const [restaurantNumber2, setRestaurantNumber2] = useState("");
   console.log(restaurantNumber2);
+
+  const [Registrationform, setRegistrationform] = useState({
+    restaurantName: "",
+    personName: "",
+    email: "",
+    Designation: "",
+    GST: "",
+   
+  });
+
+
+  const [emailError, setEmailError] = useState("");
+
+  const validateEmail = (email) => {
+    if (!email) {
+      return "Email is required";
+    } else if (!validator.isEmail(email)) {
+      return "Invalid email address";
+    } else {
+      return "";
+    }
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const emailValidationError = validateEmail(Registrationform.email);
+    if (emailValidationError) {
+      setEmailError(emailValidationError);
+    } else {
+      setEmailError("");
+      alert(JSON.stringify(Registrationform, null, 2));
+    }
+  };
+
+
+
+
+
+
  
   const [imagePreview, setImagePreview] = useState(null);
   const [file, setFile] = useState(null);
@@ -62,18 +101,28 @@ const Registration = () => {
           </div>
 
           <div className="form-divreg">
-            <form action="">
+            <form onSubmit={handleSubmit}>
               <div className="labelinput-divreg">
                 <label htmlFor="" className="labelreg">
                   Restaurant name
                 </label>
-                <input type="text" className="inputbox" placeholder="Name" />
+                <input type="text" className="inputbox" placeholder="Name"
+                value={Registrationform.restaurantName}
+                onChange={(e) =>
+                  setRegistrationform({ ...Registrationform, restaurantName: e.target.value })
+                }
+                 />
               </div>
               <div className="labelinput-divreg">
                 <label htmlFor="" className="labelreg">
                   Contact person name
                 </label>
-                <input type="text" className="inputbox" placeholder="Name" />
+                <input type="text" className="inputbox" placeholder="Name" 
+                value={Registrationform.personName}
+                onChange={(e) =>
+                  setRegistrationform({ ...Registrationform, personName: e.target.value })
+                }
+                />
               </div>
 
               <div className="labelinput-divreg">
@@ -98,12 +147,21 @@ const Registration = () => {
                 <label htmlFor="" className="labelreg">
                   Contact Person Email ID
                 </label>
-                <input type="email" className="inputbox" placeholder="xyz@gmail.com" />
+                <input type="email"  className={`inputbox ${emailError ? "inputbox-error" : ""}`}  placeholder="xyz@gmail.com"
+                value={Registrationform.email}
+                onChange={(e) =>{
+                  setRegistrationform({ ...Registrationform, email: e.target.value })
+                  setEmailError(validateEmail(e.target.value)); }
+                } />
+                  {emailError && <div style={{ color: "red" }}>{emailError}</div>}
               </div>
 
               <div className="labelinput-divreg">
                 <label for="cars" className="labelreg">Designation</label>
-                <select name="desig" id="desig" className="inputbox">
+                <select name="desig" id="desig" className="inputbox" value={Registrationform.Designation}
+                onChange={(e) =>
+                  setRegistrationform({ ...Registrationform, Designation: e.target.value })
+                }>
                   <option value="Owner">Owner</option>
                   <option value="Manager">Manager</option>
                   <option value="Admin">Admin</option>
@@ -114,12 +172,16 @@ const Registration = () => {
                 <label htmlFor="" className="labelreg">
                   GST NUMBER
                 </label>
-                <input type="text" className="inputbox" placeholder="" />
+                <input type="text" className="inputbox" placeholder="" value={Registrationform.GST}
+                onChange={(e) =>
+                  setRegistrationform({ ...Registrationform, GST: e.target.value })
+                }/>
               </div>
               <div className="labelinput-divreg ">
                 <label htmlFor="" className="labelreg">
                   Restaurant logo
                 </label>
+               
                 <div className="logo">
                   <input type="file" id="hidden-file-input" onChange={handleImage} placeholder="" style={{ display: 'none' }} />
                   <span>Drag & Drop to upload or </span>
