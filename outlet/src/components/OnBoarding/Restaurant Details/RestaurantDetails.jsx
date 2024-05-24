@@ -63,7 +63,7 @@ const RestaurantDetails = () => {
 
     <div className="main-div2">
       <div className="submain-div2">
-        <div className="heading-div2">
+        <div className="heading-divqqq">
           <h5 >Restaurant Details</h5>
         </div>
 
