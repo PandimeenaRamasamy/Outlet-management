@@ -25,11 +25,9 @@ const Location = () => {
 
 
   }
+  
 
-  const getFormData=()=>{
-    return form
-
-  }
+ 
   return (
     <div className="main-div">
       <div className="sub-div">

@@ -11,6 +11,7 @@ import BankDetails from '../BankDetails/BankDetails';
 import Location from '../Location/Location';
 
 function StepperForm() {
+ 
   const [activeStep, setActiveStep] = useState(0);
   const restaurantDetailsRef = useRef();
   const Locationref=useRef();
@@ -18,7 +19,7 @@ function StepperForm() {
 
   const steps = [
     { title: 'Restaurant Details', component: <RestaurantDetails ref={restaurantDetailsRef} />, icon: <BiNotepad className='image' /> },
-    { title: 'Location', component: <Location ref={Locationref} />, icon: <CiLocationOn className='image' /> },
+    { title: 'Location', component: <Location  />, icon: <CiLocationOn className='image' /> },
     { title: 'FSSAI', component: <Fssai />, icon: <PiNotepadBold className='image' /> },
     { title: 'Bank Details', component: <BankDetails />, icon: <TfiNotepad className='image' /> },
   ];
@@ -41,25 +42,9 @@ function StepperForm() {
     }
   };
 
-  const handleSaveAndNext = () => {
-    let newFormdata = {};
-    switch (activeStep) {
-      case 0:
-        newFormdata = { ...mainForm, restaurantDetails: restaurantDetailsRef.current.getFormData() };
-        break;
-      // Add cases for other steps as needed
-      case 1:
-        newFormdata = { ...mainForm,Location: Locationref.current.getFormData() };
-        break;
-      default:
-        break;
-    }
-    setMainForm(newFormdata);
-    console.log(newFormdata); // Log the updated form data
-    handleNextStep();
-  };
 
   const progress = ((visitedSteps.filter(step => step).length) / steps.length) * 100;
+  
 
   return (
     <div className="page-content">
@@ -90,10 +75,10 @@ function StepperForm() {
       <div className='btn-container'>
         <div className='btn-footer'>
           <div>
-            <button className='clear_all' onClick={() => restaurantDetailsRef.current.clearFormData()}>Clear ALL</button>
+            <button className='clear_all'>Clear ALL</button>
           </div>
           <div>
-            <button className='save_next' onClick={handleSaveAndNext}>Save & Next</button>
+            <button className='save_next' onClick={handleNextStep}>Save & Next</button>
           </div>
         </div>
       </div>

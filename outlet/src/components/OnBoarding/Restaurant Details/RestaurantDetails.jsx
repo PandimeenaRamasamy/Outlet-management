@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useImperativeHandle, forwardRef } from "react";
 import "../Restaurant Details/RestaurantDetails.css";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import validator from "validator";
 
-const RestaurantDetails = () => {
+const RestaurantDetails = forwardRef((props, ref) => {
   const [form, setForm] = useState({
     BusinessLegalName: "",
     phoneType: "",
@@ -18,6 +18,25 @@ const RestaurantDetails = () => {
 
   const [isChecked, setIsChecked] = useState(false);
   const [emailError, setEmailError] = useState("");
+
+  useImperativeHandle(ref, () => ({
+    getFormData: () => {
+      return form;
+    },
+    clearFormData: () => {
+      setForm({
+        BusinessLegalName: "",
+        phoneType: "",
+        email: "",
+        website: "",
+        InstagramLink: "",
+        FacebookLink: "",
+        restaurantNumber: "",
+        whatsappNumber: "",
+      });
+      setIsChecked(false);
+    }
+  }));
 
   const validateEmail = (email) => {
     if (!email) {
@@ -36,7 +55,7 @@ const RestaurantDetails = () => {
       setEmailError(emailValidationError);
     } else {
       setEmailError("");
-      alert(JSON.stringify(form, null, 2));
+      // handle form submission
     }
   };
 
@@ -48,7 +67,6 @@ const RestaurantDetails = () => {
       setForm({ ...form, whatsappNumber: "" });
     }
   };
-  console.log(form)
 
   return (
     <>
@@ -57,7 +75,6 @@ const RestaurantDetails = () => {
           <div className="heading-div2">
             <h5>Restaurant Details</h5>
           </div>
-
           <div className="form-div2">
             <form onSubmit={handleSubmit}>
               <div className="labelinput-div">
@@ -153,7 +170,7 @@ const RestaurantDetails = () => {
                   <PhoneInput
                     inputStyle={{ color: "green" }}
                     country={"us"}
-                    value={form.restaurantNumber}
+                    value={form.whatsappNumber}
                     onChange={(value) =>
                       setForm({ ...form, whatsappNumber: value })
                     }
@@ -240,12 +257,13 @@ const RestaurantDetails = () => {
                   />
                 </div>
               </div>
-              </form>
+              <button type="submit">Submit</button>
+            </form>
           </div>
         </div>
       </div>
     </>
   );
-};
+});
 
 export default RestaurantDetails;
