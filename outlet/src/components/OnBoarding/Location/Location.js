@@ -3,26 +3,21 @@ import "../Location/Location.css";
 import { useState } from "react";
 
 const Location = () => {
-  
-  const[form,setForm]=useState({
-    address:"",
-    pincode:"",
-    city:"",
-    state:"",
-    country:""
-  })
-  console.log(form)
-  const[textboxes,setTextboxes]=useState([''])
+  const [form, setForm] = useState({
+    address: [""],
+    pincode: "",
+    city: "",
+    state: "",
+    country: "",
+  });
+  console.log(form);
+  const [textboxes, setTextboxes] = useState([""]);
 
-  const handleTextBoxes=(e)=>{
-    e.preventDefault(); 
-    setTextboxes([...textboxes,''])
+  const handleTextBoxes = (e) => {
+    e.preventDefault();
 
-
-
-
-
-  }
+    setTextboxes([...textboxes, ""]);
+  };
   return (
     <div className="main-div">
       <div className="sub-div">
@@ -37,60 +32,95 @@ const Location = () => {
             </div>
             <div className="input-div">
               <label className="label">Address Line 1</label>
-              <input type="text" className="input" placeholder="Name"  onChange={(e) => {
+              <input
+                type="text"
+                className="input"
+                placeholder="Name"
+                onChange={(e) => {
                   const newTextBoxes = [...textboxes];
                   newTextBoxes[0] = e.target.value;
-                  setTextboxes(newTextBoxes);
-                  setForm({ ...form, address: newTextBoxes.join(", ") });
-                }} />
+                  setForm((prevForm) => ({
+                    ...prevForm,
+                    address: newTextBoxes.join(", "),
+                  }));
+                }}
+              />
             </div>
-            {textboxes.map((textBox,index)=>{
-
-              return(
+            {textboxes.map((textBox, index) => {
+              return (
                 <div className="input-div2" key={index}>
-                <label className="label">Line {index+2}</label>
-                <input type="text" className="input" placeholder="Name" onChange={(e) => {
-                    const newTextBoxes = [...textboxes];
-                    newTextBoxes[index+1] = e.target.value;
-                    setTextboxes(newTextBoxes);
-                    setForm({ ...form, address: newTextBoxes.join(", ") });
-                  }}/>
-                {index === textboxes.length - 1 && (
-                  <button className="btn" onClick={handleTextBoxes}>
-                    + Add line
-                  </button>
-                )}
-              </div>
-
-
-              )
+                  <label className="label">Line {index + 2}</label>
+                  <input
+                    type="text"
+                    className="input"
+                    placeholder="Name"
+                    onChange={(e) => {
+                      const newTextBoxes = [...textboxes];
+                      newTextBoxes[1] = e.target.value;
+                      setForm((prevForm) => ({
+                        ...prevForm,
+                        address: newTextBoxes.join(", "),
+                      }));
+                    }}
+                  />
+                  {index === textboxes.length - 1 && (
+                    <button className="btn" onClick={handleTextBoxes}>
+                      + Add line
+                    </button>
+                  )}
+                </div>
+              );
             })}
-           
+
             <div className="city-info-div">
               <div className="city-info-flex">
                 <div className="city-info-col">
                   <label className="label">Pincode</label>
-                  <input type="text" className="input2" placeholder="600 084" onChange={(e)=>setForm({...form,"pincode":e.target.value})} />
+                  <input
+                    type="text"
+                    className="input2"
+                    placeholder="600 084"
+                    onChange={(e) =>
+                      setForm({ ...form, pincode: e.target.value })
+                    }
+                  />
                 </div>
                 <div className="city-info-col">
                   <label className="label">City</label>
-                  <input type="text" className="input2" placeholder="Chennai" onChange={(e)=>setForm({...form,"city":e.target.value})}/>
+                  <input
+                    type="text"
+                    className="input2"
+                    placeholder="Chennai"
+                    onChange={(e) => setForm({ ...form, city: e.target.value })}
+                  />
                 </div>
               </div>
-      
-        
+
               <div className="city-info-flex">
                 <div className="city-info-col">
                   <label className="label">State</label>
-                  <input type="text" className="input2" placeholder="Tamil Nadu" onChange={(e)=>setForm({...form,"state":e.target.value})} />
+                  <input
+                    type="text"
+                    className="input2"
+                    placeholder="Tamil Nadu"
+                    onChange={(e) =>
+                      setForm({ ...form, state: e.target.value })
+                    }
+                  />
                 </div>
                 <div className="city-info-col">
                   <label className="label">Country</label>
-                  <input type="text" className="input2" placeholder="India" onChange={(e)=>setForm({...form,"country":e.target.value})} />
+                  <input
+                    type="text"
+                    className="input2"
+                    placeholder="India"
+                    onChange={(e) =>
+                      setForm({ ...form, country: e.target.value })
+                    }
+                  />
                 </div>
               </div>
-              </div>
-        
+            </div>
           </form>
         </div>
       </div>
