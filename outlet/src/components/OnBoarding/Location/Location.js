@@ -1,8 +1,9 @@
 import React from "react";
 import "../Location/Location.css";
 import { useState } from "react";
+import { ref } from "yup";
 
-const Location = () => {
+const Location = React.forwardRef((props,ref) => {
   
   const[form,setForm]=useState({
     address:"",
@@ -11,7 +12,7 @@ const Location = () => {
     state:"",
     country:""
   })
-  console.log(form)
+  
   const[textboxes,setTextboxes]=useState([''])
 
   const handleTextBoxes=(e)=>{
@@ -21,8 +22,14 @@ const Location = () => {
 
 
 
-
   }
+  
+  const getFormData=()=>{
+    return form;
+  }
+  React.useImperativeHandle(ref, () => ({
+    getFormData
+  }));
   return (
     <div className="main-div">
       <div className="sub-div">
@@ -96,6 +103,6 @@ const Location = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Location;

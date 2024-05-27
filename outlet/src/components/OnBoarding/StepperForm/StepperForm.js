@@ -1,28 +1,28 @@
-import React, { useState, useEffect } from 'react';
-import './StepperForm.css'; // Import your CSS file
+import React, { useState, useEffect, useRef } from 'react';
+import './StepperForm.css';
 import { BiNotepad } from "react-icons/bi";
 import { PiNotepadBold } from "react-icons/pi";
 import { CiLocationOn } from "react-icons/ci";
 import { TfiNotepad } from "react-icons/tfi";
 import Footerbar from '../../Footer/Footerbar';
-import RestaurantDetails from "../Restaurant Details/RestaurantDetails"
+import RestaurantDetails from "../Restaurant Details/RestaurantDetails";
 import Fssai from '../../Fssai/Fssai';
 import BankDetails from '../BankDetails/BankDetails';
-import Location from '../Location/Location'
-
-
-
-
+import Location from '../Location/Location';
 
 function StepperForm() {
   const [activeStep, setActiveStep] = useState(0);
+  const restaurantDetailsRef = useRef();
+  const Locationref=useRef();
+  const [mainForm, setMainForm] = useState({});
 
   const steps = [
-    { title: 'Restaurant Details', component: <RestaurantDetails />, icon: <BiNotepad className='image' /> },
-    { title: 'Location', component: <Location />, icon: <CiLocationOn className='image' /> },
+    { title: 'Restaurant Details', component: <RestaurantDetails ref={restaurantDetailsRef} />, icon: <BiNotepad className='image' /> },
+    { title: 'Location', component: <Location ref={Locationref} />, icon: <CiLocationOn className='image' /> },
     { title: 'FSSAI', component: <Fssai />, icon: <PiNotepadBold className='image' /> },
     { title: 'Bank Details', component: <BankDetails />, icon: <TfiNotepad className='image' /> },
   ];
+
   const [visitedSteps, setVisitedSteps] = useState(new Array(steps.length).fill(false));
 
   useEffect(() => {
@@ -41,43 +41,59 @@ function StepperForm() {
     }
   };
 
+  const handleSaveAndNext = () => {
+    let newFormdata = {};
+    switch (activeStep) {
+      case 0:
+        newFormdata = { ...mainForm, restaurantDetails: restaurantDetailsRef.current.getFormData() };
+        break;
+      // Add cases for other steps as needed
+      case 1:
+        newFormdata = { ...mainForm,Location: Locationref.current.getFormData() };
+        break;
+      default:
+        break;
+    }
+    setMainForm(newFormdata);
+    console.log(newFormdata); // Log the updated form data
+    handleNextStep();
+  };
+
   const progress = ((visitedSteps.filter(step => step).length) / steps.length) * 100;
 
   return (
     <div className="page-content">
       <div className='stepform'>
-      <div className='container'>
-        <div className='sub-container'>
-          <div className="stepper-progress">
-            <div className="progress-bar" style={{ width: `${progress}%` }}></div>
-          </div>
-          <div className="stepper-container">
-            {steps.map((step, index) => (
-              <div
-                key={index}
-                className={`step ${index === activeStep ? 'active' : ''} ${visitedSteps[index] ? 'visited' : ''}`}
-                onClick={() => handleStepClick(index)}
-              >
-                {step.icon}
-                <div className='icon-text'>{step.title}</div>
-              </div>
-            ))}
+        <div className='container'>
+          <div className='sub-container'>
+            <div className="stepper-progress">
+              <div className="progress-bar" style={{ width: `${progress}%` }}></div>
+            </div>
+            <div className="stepper-container">
+              {steps.map((step, index) => (
+                <div
+                  key={index}
+                  className={`step ${index === activeStep ? 'active' : ''} ${visitedSteps[index] ? 'visited' : ''}`}
+                  onClick={() => handleStepClick(index)}
+                >
+                  {step.icon}
+                  <div className='icon-text'>{step.title}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-      <div className='component-container'>
-        {steps[activeStep].component} 
-      </div>
-
-
+        <div className='component-container'>
+          {steps[activeStep].component}
+        </div>
       </div>
       <div className='btn-container'>
         <div className='btn-footer'>
           <div>
-            <button className='clear_all'>Clear ALL</button>
+            <button className='clear_all' onClick={() => restaurantDetailsRef.current.clearFormData()}>Clear ALL</button>
           </div>
           <div>
-            <button className='save_next' onClick={handleNextStep}>Save & Next</button>
+            <button className='save_next' onClick={handleSaveAndNext}>Save & Next</button>
           </div>
         </div>
       </div>
