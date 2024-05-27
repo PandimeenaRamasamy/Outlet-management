@@ -12,7 +12,7 @@ const Location = () => {
     state:"",
     country:""
   })
-  console.log(form)
+  
   const[textboxes,setTextboxes]=useState([''])
 
   const handleTextBoxes=(e)=>{
