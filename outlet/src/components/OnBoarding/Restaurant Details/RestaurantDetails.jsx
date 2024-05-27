@@ -67,6 +67,7 @@ const RestaurantDetails = forwardRef((props, ref) => {
       setForm({ ...form, whatsappNumber: "" });
     }
   };
+  console.log(form)
 
   return (
     <>
